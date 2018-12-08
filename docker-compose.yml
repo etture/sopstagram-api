@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+    - "80:3015"
+    volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules/
+    environment:
+      PORT: 3015
+      TOKEN_SECRET: "cAp81hb736nnbwI01llB23sfSbU328B1920lmnzX44bAwerlp4b7m1WEv9kUs34z"
+
+      RDS_HOST: "jinoolee-aws-rds.c5uvkznthg94.ap-northeast-2.rds.amazonaws.com"
+      RDS_USER: "etture"
+      RDS_PASSWORD: "nilotkud0279"
+      RDS_DATABASE: "sopstagram"
