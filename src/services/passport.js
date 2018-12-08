@@ -2,10 +2,11 @@ const passport = require('passport');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
+const db = require('../utils/db');
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-    secretOrKey: process.env.TOKEN_SECRET
+    secretOrKey: process.env.TOKEN_SECRET || "cAp81hb736nnbwI01llB23sfSbU328B1920lmnzX44bAwerlp4b7m1WEv9kUs34z"
 };
 
 const jwtCheck = new JwtStrategy(jwtOptions, function (payload, done) {
