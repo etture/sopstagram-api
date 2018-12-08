@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-    - "80:3015"
+    - "3015:3015"
     volumes:
     - .:/usr/src/app
     - /usr/src/app/node_modules/
